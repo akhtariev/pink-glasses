@@ -9,8 +9,6 @@ maskButton.onclick = () => {
     });
 
     function fn() {
-        alert('fuck');
-        console.log('bitch');
         search(document.body);
 
         function search(htmlElem) {
@@ -36,8 +34,10 @@ maskButton.onclick = () => {
 
         function handleText(textNode) {
             let v = textNode.nodeValue;
-            if (v.includes("December")) {
-                v = v.replace("December", "FUCK");
+            if (v.includes("the")) {
+                v = v.replace("the", "FUCK");
+            } else if (v.includes("The")) {
+                v = v.replace("The", "FUCK");
             }
             textNode.nodeValue = v;
         }
