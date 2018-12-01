@@ -1,4 +1,4 @@
- var filter = document.getElementById('filter');
+ var filter = document.getElementById('maskButton');
 
  filter.onclick = function(element) {
     // console.log("s");
