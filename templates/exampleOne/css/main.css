@@ -1,0 +1,552 @@
+/* ----------------------------------------------------*/
+/* BASIC SETUP*/
+/* ----------------------------------------------------*/
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.clearfix {
+  zoom: 1;
+}
+.clearfix:after {
+  content: ".";
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+/* #f9f7f7
+#dbe2ef
+#3f72af
+#112d4e */
+
+html {
+  color: #dbe2ef;
+  font-family: "Lato", "Arial", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+body {
+  height: 100vh;
+}
+
+/* HEADERS*/
+
+.title h2 {
+  font-size: 200%;
+  word-spacing: 2px;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  color: #112d4e;
+}
+
+.type h2 {
+  font-size: 150%;
+  word-spacing: 2px;
+  text-align: center;
+  margin: 30px 0 60px 0;
+  letter-spacing: 1px;
+  color: #112d4e;
+}
+
+/* ----------------------------------------------------*/
+/* ABOUT*/
+/* ----------------------------------------------------*/
+
+.about-me {
+  background-color: #f9f7f7;
+  padding: 100px 20px;
+}
+
+.me {
+  width: 80%;
+  margin: 0;
+  overflow: hidden;
+  background-color: #f9f7f7;
+  padding: 15%;
+  border-radius: 50%;
+  opacity: 0.7;
+  -webkit-transition: border-radius 0.5s, opacity 0.5s;
+  transition: border-radius 0.5s, opacity 0.5s;
+}
+
+.me:hover {
+  opacity: 1;
+  border-radius: 30%;
+}
+
+.picture {
+  text-align: center;
+}
+
+.about-text {
+  padding-top: 100px;
+  padding-right: 10%;
+  padding-left: 10%;
+  font-size: 100%;
+}
+
+.about-text p {
+  float: left;
+  color: #112d4e;
+  font-size: 110%;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+
+
+}
+
+/* ----------------------------------------------------*/
+/* HEADER*/
+/* ----------------------------------------------------*/
+
+header {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#112d4eb3), to(#112d4eb3)),
+    url(../img/cypress.jpg);
+  background-image: linear-gradient(#112d4eb3, #112d4eb3),
+    url(../img/cypress.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-attachment: fixed;
+}
+
+.center-intro {
+  display: inline-block;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  width: 100%;
+}
+
+.align-type-left {
+  display: block;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.center-intro h1 {
+  word-spacing: 3px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  color: #f9f7f7;
+  font-size: 350%;
+  letter-spacing: 1px;
+}
+
+.center-intro h2 {
+  font-size: 150%;
+  margin-bottom: 100px;
+  color: #dbe2ef;
+}
+
+.btn {
+  display: inline-block;
+}
+.btn:link,
+.btn:visited {
+  padding: 0.3em 1.2em;
+  font-size: 1.3em;
+  text-decoration: none;
+  font-weight: 300;
+  border-radius: 200px;
+  border: 1px solid #f9f7f7;
+  color: #f9f7f7;
+  -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+  transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.btn:hover,
+.btn:active {
+  border: 1px solid #112d4e;
+  color: #112d4e;
+  background-color: #f9f7f7;
+}
+
+.icon-white {
+  color: #dbe2ef;
+  margin: 0 20px;
+}
+
+
+.icon-white:hover,
+.icon-white:active {
+  color: #3f72af;
+}
+
+.icon-row {
+  font-family: "Ubuntu", sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 50px;
+}
+
+.icon-row a {
+  text-decoration: none;
+}
+
+.btn-box {
+  margin: 0.5em;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+@media all and (max-width: 32em) {
+  /* .header {
+    background-attachment: initial;
+  } */
+
+  .center-intro {
+    text-align: left;
+  }
+
+  .icon-row {
+    font-size: 35px;
+    text-align: left;
+  }
+
+  .icon-white {
+    margin: 0 0 0 0.3em;
+  }
+
+  .center-intro h1 {
+    font-size: 200%;
+  }
+
+  .center-intro h2 {
+    font-size: 100%;
+    margin: 0.1em;
+  }
+
+  .align-type-left {
+    width: 100%;
+  }
+}
+
+/* ----------------------------------------------------*/
+/* FOOTER*/
+/* ----------------------------------------------------*/
+
+footer {
+  background-color: #112d4e;
+  padding: 50px;
+  font-color: #f9f7f7;
+}
+
+.footer-info,
+.contact-info {
+  list-style: none;
+}
+
+.footer-info {
+  float: left;
+}
+
+.contact-info {
+  float: right;
+}
+
+.footer-info li,
+.contact-info li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.footer-info li a:link,
+.footer-info li a:visited,
+.contact-info li a:link,
+.contact-info li a:visited {
+  text-decoration: none;
+  border: 0;
+  color: #f9f7f7;
+}
+
+.fa-envelope,
+.fa-whatsapp,
+.fa-file {
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+.fa-envelope:hover,
+.fa-whatsapp:hover,
+.fa-file:hover {
+  color: #3f72af;
+}
+
+
+/* ----------------------------------------------------*/
+/* EDUCATION*/
+/*https://www.w3schools.com/howto/howto_css_timeline.asp*/
+/* ----------------------------------------------------*/
+
+
+.education {
+  background-color: #dbe2ef;
+  padding: 100px 20px;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: #112d4e;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: #dbe2ef;
+  width: 50%;
+  color: #3f72af;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: #f9f7f7;
+  border: 4px solid #3f72af;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  left: 50%;
+}
+
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid #f9f7f7;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent #f9f7f7;
+}
+
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid #f9f7f7;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #f9f7f7; 
+}
+
+.right::after {
+  left: -16px;
+}
+
+.content {
+  padding: 20px 30px;
+  background-color: #f9f7f7;
+  position: relative;
+  border-radius: 6px;
+}
+
+/*LINKS*/
+.edu-info li a:link,
+.edu-info li a:visited {
+  text-decoration: none;
+  border: 0;
+  color: #112d4e;
+  padding-bottom: 1px;
+  border-bottom: 1px solid #112d4e;
+  margin-bottom: 1px;
+  -webkit-transition: color 0.3s, border-color 0.3s;
+  transition: color 0.3s, border-color 0.3s;
+
+}
+
+.edu-info li a:hover,
+.edu-info li a:active {
+  color: #3f72af;
+  border-bottom: 1px solid transparent;
+}
+
+.edu-info {
+  list-style: none;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+    .timeline::after {
+      left: 31px;
+    }
+  
+  /* Full-width containers */
+    .container {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+  
+  /* Make sure that all arrows are pointing leftwards */
+    .container::before {
+      left: 60px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+  
+  /* Make sure all circles are at the same spot */
+    .left::after, .right::after {
+      left: 15px;
+    }
+  
+  /* Make all right containers behave like the left ones */
+    .right {
+      left: 0%;
+    }
+  }
+
+
+/* ----------------------------------------------------*/
+/* PROJECTS*/
+/* ----------------------------------------------------*/
+
+/* http://gifmaker.me/ */
+
+.projects {
+  padding: 100px 0;
+  background-color: #f9f7f7;
+}
+.proj-items {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.proj-item {
+  margin: 10px;
+  border: 2px solid #3f72af;
+  border-radius: 20%;
+  background-color: #f9f7f7;
+  color: #112d4e;
+  padding: 20px;
+  text-align: center;
+  height: 450px;
+}
+
+.proj-img {
+  width: 90%;
+  max-height: 341px;
+}
+
+
+/* ----------------------------------------------------*/
+/* SKILLS*/
+/* ----------------------------------------------------*/
+
+.skills ul {
+  list-style: none;
+}
+
+.skills {
+  background-color: #dbe2ef;
+  padding: 100px 20px;
+  color: #112d4e;
+}
+
+.type:last-of-type {
+  margin-top: 30px;
+}
+
+/* .skills li {
+  display: inline-block;
+} */
+
+.skills ul {
+  /* background-color: red; */
+  text-align: right;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: #f9f7f7;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.fill {
+  background-color: #3f72af;
+}
+
+.skills h3 {
+  font-size: 150%;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+
+/* ----------------------------------------------------*/
+/* AWARDS*/
+/* ----------------------------------------------------*/
+
+
+.awards {
+  padding: 100px 20px;
+  background-color: #f9f7f7;
+}
+
+.list-awards {
+  text-align: center;
+  list-style: none;
+  color: #112d4e;
+  font-size: 120%;
+}
+.list-awards li {
+  margin: 20px 0;
+}
+
+.awards span {
+  color: #3f72af;
+}
+
