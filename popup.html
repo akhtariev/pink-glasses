@@ -6,14 +6,17 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
           crossorigin="anonymous">
     <style>
-
+        .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+            background-color: pink !important;
+        }
     </style>
 </head>
 <body>
-<div class="container" style="margin: 10px 10px 10px 10px">
-    Pink Glasses
-    <button id="maskButton">Mask</button>
-    <button id="unmaskButton">Unmask</button>
+<div class="container" style="margin-bottom: 10px;">
+    <img src="images/pink_glasses48.png" style="display: block; margin-left: auto; margin-right: auto;">
+    <button class="btn btn-block btn-outline-primary btn-sm" id="maskButton" style="background-color: pink;">Mask
+    </button>
+    <button class="btn btn-block btn-outline-dark btn-sm" id="unmaskButton">Unmask</button>
 </div>
 <script src="popup.js"></script>
 </body>
