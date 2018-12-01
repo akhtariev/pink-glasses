@@ -1,9 +1,13 @@
 {
-    "name": "Pink Glasses",
-    "version": "1.0",
-    "description": "See the world through pink glasses!",
-    "browser_action": {
-      "default_popup": "popup.html"
-    },
-    "manifest_version": 2
-  }
+  "name": "Pink Glasses",
+  "version": "1.0",
+  "description": "See the world through pink glasses!",
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "<all_urls>"
+  ],
+  "manifest_version": 2
+}
