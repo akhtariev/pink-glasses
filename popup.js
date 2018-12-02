@@ -33,14 +33,39 @@ maskButton.onclick = () => {
         }
 
         function handleText(textNode) {
-            let v = textNode.nodeValue;
-            if (v.includes("the")) {
-                v = v.replace("the", "FUCK");
-            } else if (v.includes("The")) {
-                v = v.replace("The", "FUCK");
+            let v = textNode.nodeValue.trim();
+
+    
+            if (v.length > 0) {
+                result = getCurseWordsAndUpdate(v, textNode);
             }
-            textNode.nodeValue = v;
         }
+
+        function getCurseWordsAndUpdate(text, textNode) {
+
+            var url = "https://neutrinoapi.com/bad-word-filter?api-key=5VYXBGEqqlAfMpoJyIIbzHCUQ5YTtidiBbfuUlY6NkKIDXk9&user-id=roman1&content=" + encodeURI(text);
+
+            var xhr = new XMLHttpRequest();
+        
+            xhr.open("POST", url, true);
+        
+            xhr.onload = function() {
+                var result = xhr.responseText;
+        
+                if (this.status === 200) {
+                    alert(result);
+                    console.log(text + "!!!" + result);
+                    textNode.nodeValue = "hi";
+                } else if (this.status === 400) {
+                    console.log("failed call");
+                }
+            }
+        
+            xhr.send(null);
+        }
+
+
+        
     }
 };
 
