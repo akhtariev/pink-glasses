@@ -2,7 +2,7 @@
 
 ##### Imagine that someone is having a bad day...
 
-![](images\readme1.png)
+![](https://cl.ly/595b4bcf0006)
 
 
 
@@ -10,7 +10,7 @@
 
 Our team prefers to see the world though pink glasses. So, here we go:
 
-![](images\readme2.png)
+![](https://cl.ly/a243976ec117)
 
 
 
@@ -34,4 +34,4 @@ Our team prefers to see the world though pink glasses. So, here we go:
 
 
 
-![](images\readme3.png)
+![](https://cl.ly/1c0480af33d3)
