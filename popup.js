@@ -2,7 +2,7 @@ let maskButton = document.getElementById("maskButton");
 let unmaskButton = document.getElementById("unmaskButton");
 
 maskButton.onclick = () => {
-    alert('Mask button clicked');
+    // alert('Mask button clicked');
 
     chrome.tabs.executeScript({
         code: '(' + fn + ')();'
@@ -40,8 +40,20 @@ maskButton.onclick = () => {
                 result = getCurseWordsAndUpdate(v, textNode);
             }
         }
+        
 
         function getCurseWordsAndUpdate(text, textNode) {
+            let words = text.split(" ");
+            var emojis = ['\u{1F4A9}', '\u{1F601}','\u{1F602}','\u{1F603}','\u{1F604}','\u{1F605}','\u{1F60D}','\u{1F430}','\u{1F431}','\u{1F437}'];
+
+
+            // var vocab = ["Fuck", "bitch", "ass", "bitching", "fag", "shit", "fuck", "fag.", "shit.", "punks", "hell.", "loser"];
+            
+            // for(let word of words) {
+            //      if (vocab.includes(word)) {
+            //         textNode.nodeValue = textNode.nodeValue.replace(word, emojis[Math.floor(Math.random() * emojis.length)]);
+            //      }
+            // }            
 
             var url = "https://neutrinoapi.com/bad-word-filter?api-key=5VYXBGEqqlAfMpoJyIIbzHCUQ5YTtidiBbfuUlY6NkKIDXk9&user-id=roman1&content=" + encodeURI(text);
 
@@ -57,10 +69,9 @@ maskButton.onclick = () => {
                     result = JSON.parse(result);
                     if (result["is-bad"]) {
                         let badWords = result["bad-words-list"];
-                        console.log(badWords);
                         let final = textNode.nodeValue;
                         for (let badWord of badWords) {
-                            let toReplace = "!!!!!!!!!!!";
+                            let toReplace = emojis[Math.floor(Math.random() * emojis.length)];
                             final = final.replace(badWord, toReplace);
                             final = final.replace(badWord.charAt(0).toUpperCase() + badWord.substr(1), toReplace);
                             final = final.replace(badWord.toUpperCase(), toReplace);
@@ -71,7 +82,7 @@ maskButton.onclick = () => {
                     }
                     
                 } else if (this.status === 400) {
-                    console.log("failed call");
+                    //
                 }
             }
         
@@ -85,5 +96,5 @@ maskButton.onclick = () => {
 
 unmaskButton.onclick = () => {
     console.log("Unmask button clicked.");
-    alert("Unmask button clicked.");
+    // alert("Unmask button clicked.");
 };
