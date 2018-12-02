@@ -8,7 +8,7 @@
 
 ##### Does that mean that you are having a bad day as well?
 
-Our team prefers to see the world though pink glasses. So, here we go:
+No, our team prefers to see the world though pink glasses. So, here we go:
 
 ![](images/readme2.png)
 
