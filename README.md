@@ -2,7 +2,7 @@
 
 ##### Imagine that someone is having a bad day...
 
-![](C:\Users\ackht\LocalHackDay\pink-glasses\pink-glasses\images\readme1.png)
+![](images\readme1.png)
 
 
 
@@ -10,7 +10,7 @@
 
 Our team prefers to see the world though pink glasses. So, here we go:
 
-![](C:\Users\ackht\LocalHackDay\pink-glasses\pink-glasses\images\readme2.png)
+![](images\readme2.png)
 
 
 
@@ -34,4 +34,4 @@ Our team prefers to see the world though pink glasses. So, here we go:
 
 
 
-![](C:\Users\ackht\LocalHackDay\pink-glasses\pink-glasses\images\readme3.png)
+![](images\readme3.png)
