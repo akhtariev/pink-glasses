@@ -43,50 +43,61 @@ maskButton.onclick = () => {
         
 
         function getCurseWordsAndUpdate(text, textNode) {
-            let words = text.split(" ");
+            
             var emojis = ['\u{1F4A9}', '\u{1F601}','\u{1F602}','\u{1F603}','\u{1F604}','\u{1F605}','\u{1F60D}','\u{1F430}','\u{1F431}','\u{1F437}'];
 
+            chrome.storage.sync.get('version', function(data) {
+                
 
-            // var vocab = ["Fuck", "bitch", "ass", "bitching", "fag", "shit", "fuck", "fag.", "shit.", "punks", "hell.", "loser"];
-            
-            // for(let word of words) {
-            //      if (vocab.includes(word)) {
-            //         textNode.nodeValue = textNode.nodeValue.replace(word, emojis[Math.floor(Math.random() * emojis.length)]);
-            //      }
-            // }            
+                if (data.version === "generic") {
 
-            var url = "https://neutrinoapi.com/bad-word-filter?api-key=5VYXBGEqqlAfMpoJyIIbzHCUQ5YTtidiBbfuUlY6NkKIDXk9&user-id=roman1&content=" + encodeURI(text);
+                    var url = "https://neutrinoapi.com/bad-word-filter?api-key=5VYXBGEqqlAfMpoJyIIbzHCUQ5YTtidiBbfuUlY6NkKIDXk9&user-id=roman1&content=" + encodeURI(text);
 
-            var xhr = new XMLHttpRequest();
+                    var xhr = new XMLHttpRequest();
+                
+                    xhr.open("POST", url, true);
+                
+                    xhr.onload = function() {
+                        var result = xhr.response;
+                
+                        if (this.status === 200) {
+                            // console.log(result);
+                            result = JSON.parse(result);
+                            if (result["is-bad"]) {
+                                let badWords = result["bad-words-list"];
+                                let final = textNode.nodeValue;
+                                for (let badWord of badWords) {
+                                    let toReplace = emojis[Math.floor(Math.random() * emojis.length)];
+                                    final = final.replace(badWord, toReplace);
+                                    final = final.replace(badWord.charAt(0).toUpperCase() + badWord.substr(1), toReplace);
+                                    final = final.replace(badWord.toUpperCase(), toReplace);
+                                }
         
-            xhr.open("POST", url, true);
+                                textNode.nodeValue = final;
         
-            xhr.onload = function() {
-                var result = xhr.response;
-        
-                if (this.status === 200) {
-                    // console.log(result);
-                    result = JSON.parse(result);
-                    if (result["is-bad"]) {
-                        let badWords = result["bad-words-list"];
-                        let final = textNode.nodeValue;
-                        for (let badWord of badWords) {
-                            let toReplace = emojis[Math.floor(Math.random() * emojis.length)];
-                            final = final.replace(badWord, toReplace);
-                            final = final.replace(badWord.charAt(0).toUpperCase() + badWord.substr(1), toReplace);
-                            final = final.replace(badWord.toUpperCase(), toReplace);
+                            }
+                            
+                        } else if (this.status === 400) {
+                            //
                         }
-
-                        textNode.nodeValue = final;
-
                     }
-                    
-                } else if (this.status === 400) {
-                    //
+                
+                    xhr.send(null);
+
+                } else if (data.version === "school") {
+                    let words = text.split(" ");
+                    var schoolVocab = ["Fuck", "bitch", "ass", "bitching", "fag", "shit", "fuck", "fag.", "shit.", "punks", "hell.", "loser"];
+            
+                    for(let word of words) {
+                         if (schoolVocab.includes(word)) {
+                            textNode.nodeValue = textNode.nodeValue.replace(word, emojis[Math.floor(Math.random() * emojis.length)]);
+                         }
+                    }  
+
                 }
-            }
-        
-            xhr.send(null);
+              });
+
+                    
         }
 
 
