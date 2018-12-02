@@ -50,12 +50,26 @@ maskButton.onclick = () => {
             xhr.open("POST", url, true);
         
             xhr.onload = function() {
-                var result = xhr.responseText;
+                var result = xhr.response;
         
                 if (this.status === 200) {
-                    alert(result);
-                    console.log(text + "!!!" + result);
-                    textNode.nodeValue = "hi";
+                    // console.log(result);
+                    result = JSON.parse(result);
+                    if (result["is-bad"]) {
+                        let badWords = result["bad-words-list"];
+                        console.log(badWords);
+                        let final = textNode.nodeValue;
+                        for (let badWord of badWords) {
+                            let toReplace = "!!!!!!!!!!!";
+                            final = final.replace(badWord, toReplace);
+                            final = final.replace(badWord.charAt(0).toUpperCase() + badWord.substr(1), toReplace);
+                            final = final.replace(badWord.toUpperCase(), toReplace);
+                        }
+
+                        textNode.nodeValue = final;
+
+                    }
+                    
                 } else if (this.status === 400) {
                     console.log("failed call");
                 }
