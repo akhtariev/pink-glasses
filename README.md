@@ -16,7 +16,7 @@ No, our team prefers to see the world though pink glasses. So, here we go:
 
 
 
-- *Built at UBC Local Hack Day 2018*
+- *Built at UBC Local Hack Day 2018 and made it to Top 6*
 
 
 
