@@ -10,7 +10,7 @@
 
 Our team prefers to see the world though pink glasses. So, here we go:
 
-![](https://cl.ly/a243976ec117)
+![](images/readme2.png)
 
 
 
@@ -34,4 +34,4 @@ Our team prefers to see the world though pink glasses. So, here we go:
 
 
 
-![](https://cl.ly/1c0480af33d3)
+![](images/readme3.png)
